@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PluginSettings xmlns="http://axelot.ru/esb/cc/2015/01"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://axelot.ru/esb/cc/2015/01 PluginManifest.xsd ">
+	<dotNET name="Patio" targetPlatform="Windows" version="1.0.1.8">
+		<readme>Входящая файловая точка</readme>
+		<factories>
+			<factory description="Axelot: Входящая файловая точка"
+				name="ESB_ConnectionPoints.SamplePlugins.File.IngoingConnectionPointFactory, ESB_ConnectionPoints.SamplePlugins.File" type="Ingoing">
+				<parameters>
+					<parameter name="БелАгроПром банк" type="string">
+						<comment>
+						      Каталог для чтения файлов балАгроПромБанка , класс сообщения BelAgro
+					        	</comment>
+					</parameter>
+					<parameter name="Беларусь банк" type="string">
+						<comment>
+						      Каталог для чтения файлов БеларусьБанка , класс сообщения Belarus
+					        	</comment>
+					</parameter>		
+					<parameter name="Белинвест банк" type="string">
+						<comment>
+						      Каталог для чтения файлов Белинвест банка , класс сообщения BelInvest
+					        	</comment>
+					</parameter>	
+					<parameter name="БелВэб банк" type="string">
+						<comment>
+						      Каталог для чтения файлов БелВЭБ банка , класс сообщения BelWEB
+					        	</comment>
+					</parameter>	
+					<parameter name="БПС банк" type="string">
+						<comment>
+						      Каталог для чтения файлов БПС банка , класс сообщения BPS
+					        	</comment>
+					</parameter>
+					<parameter name="Москва - Минск банк" type="string">
+						<comment>
+						      Каталог для чтения файлов Москва - Минск банка , класс сообщения MMB
+					        	</comment>
+					</parameter>		
+					<parameter name="МТбанк" type="string">
+						<comment>
+						      Каталог для чтения файлов МТбанка , класс сообщения MTBank
+					        	</comment>
+					</parameter>
+					<parameter name="Расширение файлов" type="string">
+						<comment/>
+					</parameter>	
+					<parameter name="Интервал чтения" type="string">
+						<comment>
+							Интервал чтения файлов из заданных папок.
+						</comment>
+					</parameter>	
+				</parameters>
+			</factory>
+		</factories>
+	</dotNET>
+</PluginSettings>
