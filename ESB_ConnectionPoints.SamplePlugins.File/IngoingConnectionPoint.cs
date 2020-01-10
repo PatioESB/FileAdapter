@@ -163,8 +163,12 @@ namespace ESB_ConnectionPoints.SamplePlugins.File
                         {
                             _logger.Error(string.Format("Возникла ошибка при обработке файла {0}", filepath), ex);
                         }
-                    }
-                    
+                        if (DateTime.Now.Hour == 22 & filepath == inputDirectory[0] ^ filepath == inputDirectory[4])
+                        {
+                            _logger.Info("Начало удаления файлов из указанных папок " + filepath);
+                            clearFolder(filepath);
+                        }
+                    }       
                 }
                 ct.WaitHandle.WaitOne(_readInterval);
             }
@@ -367,6 +371,20 @@ namespace ESB_ConnectionPoints.SamplePlugins.File
             else
             {
                 return DateTime.Now;
+            }
+        }
+        /// <summary>
+        /// Очистка папок.
+        /// </summary>
+        private void clearFolder(string filepath)
+        {
+            try
+            {
+                System.IO.File.Delete(filepath);
+            } 
+            catch(Exception ex)
+            {
+                _logger.Error("Произошла ошибка при удалении файла! " + ex.Message);
             }
         }
     }
